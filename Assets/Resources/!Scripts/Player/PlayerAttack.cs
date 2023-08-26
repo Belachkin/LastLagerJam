@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    
+
     [SerializeField] private Animator _animator;
 
     [SerializeField] private GameObject[] _weapons;
@@ -19,14 +22,21 @@ public class PlayerAttack : MonoBehaviour
     private int[] _armWeaponAnimations = { 14, 15 };
 
     private GameObject _weapon;
-    private Coroutine _attackCoroutine;
+    
 
+    [Header("Õï åáó÷åå è îñòàëüíàÿ õóéíÿ")]
+    [SerializeField] private Health _health;
+    [SerializeField] private Transform _attackPoint;
+    [SerializeField] private float _attackRange = 0.5f;
+    [SerializeField] private LayerMask _enemyLayers;
 
+    private bool _isAttacking = false;
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && _attackCoroutine == null)
+        if(Input.GetMouseButtonDown(0) && _isAttacking == false)
         {
+            _isAttacking = true;
             SetRandomHit();           
         }             
     }
@@ -34,7 +44,7 @@ public class PlayerAttack : MonoBehaviour
     private void SetRandomHit()
     {
                
-        //_attackCoroutine = StartCoroutine(Hit());
+        StartCoroutine(Hit());
     }
 
     private IEnumerator Hit()
@@ -44,7 +54,19 @@ public class PlayerAttack : MonoBehaviour
 
         yield return new WaitForSeconds(AnimationTime);
 
-        if(UseCount > 0)
+        Collider[] hitEnemies = Physics.OverlapSphere(_attackPoint.position, _attackRange, _enemyLayers);
+
+        foreach (Collider enemy in hitEnemies)
+        {
+            Debug.Log(Damage);
+
+            if (hitEnemies != null)
+            {
+                enemy.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
+            }
+        }
+
+        if (UseCount > 0)
         {
             UseCount--;
         }
@@ -63,7 +85,12 @@ public class PlayerAttack : MonoBehaviour
 
         _animator.SetInteger("arms", IdleAnimation);
 
-        _attackCoroutine = null;
+        _isAttacking = false;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(_attackPoint.position, _attackRange);
     }
 
     internal void ChangeWeapon(string name)
@@ -78,6 +105,21 @@ public class PlayerAttack : MonoBehaviour
             }
         }
         _animator.SetInteger("arms", IdleAnimation);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        _health.Value -= damage;
+        Debug.Log(_health.Value);
+        if (_health.Value <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Debug.Log("ÓÌÅÐ ÍÀÕÓÉ!");
     }
 }
 
