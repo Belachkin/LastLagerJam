@@ -4509,7 +4509,7 @@ MonoBehaviour:
   _speed: 5
   _player: {fileID: 0}
   _distanceToPlayerWithoutRage: 15
-  _distanceToPlayerToAttack: 1
+  _distanceToPlayerToAttack: 2
   _idleArms: 5
   _idleLegs: 5
   _attackArms: 0e0000000f000000
