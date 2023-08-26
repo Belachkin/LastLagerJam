@@ -53,6 +53,7 @@ public class Enemy : MonoBehaviour
         {
             _animator.enabled = false;
             GetComponent<Collider>().enabled = false;
+            _navMeshAgent.enabled = false;
             this.enabled = false;
         }
     }

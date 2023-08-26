@@ -22,12 +22,16 @@ public class FightEnemyState : State
     {
         base.LogicUpdate();
 
-        float distanceToPlayer = (_enemy.transform.position - _enemy._player.transform.position).magnitude;
+        Vector3 diff = _enemy.transform.position - _enemy._player.transform.position;
+        float distanceToPlayer = (diff).magnitude;
 
         if (distanceToPlayer > _enemy._distanceToPlayerToAttack)
             _stateMachine.ChangeState(_enemy._movingEnemyState);
 
-        if(_timer > _enemy._attackTimer)
+        float angle = Vector3.SignedAngle(Vector3.forward, -diff, Vector3.up);
+        _enemy.transform.eulerAngles = new Vector3(0, angle, 0);
+
+        if (_timer > _enemy._attackTimer)
         {
             _enemy._animator.SetInteger("arms", _enemy._attackArms[_attackIndex++ % _enemy._attackArms.Length]);
             _timer = 0f;

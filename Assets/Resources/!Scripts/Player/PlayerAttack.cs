@@ -34,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
     private void SetRandomHit()
     {
                
-        _attackCoroutine = StartCoroutine(Hit());
+        //_attackCoroutine = StartCoroutine(Hit());
     }
 
     private IEnumerator Hit()
