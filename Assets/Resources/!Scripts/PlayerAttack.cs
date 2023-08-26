@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
     {
 
         
-        switch (Random.Range(0, 3))
+        switch (Random.Range(0, 2))
         {
             case 0:
                 
@@ -48,20 +48,6 @@ public class PlayerAttack : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
 
                 _animator.SetInteger("arms", 13);
-                break;
-            case 2:
-                
-
-                _animator.SetInteger("arms", 15);
-
-                yield return new WaitForSeconds(0.5f);
-
-                _animator.SetInteger("arms", 14);
-
-                yield return new WaitForSeconds(0.5f);
-
-                _animator.SetInteger("arms", 13);
-
                 break;
 
         }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using static UnityEditor.Experimental.GraphView.GraphView;
@@ -47,6 +48,13 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         _enemySM.CurrentState.LogicUpdate();
+
+        if(Input.GetKeyDown(KeyCode.V)) 
+        {
+            _animator.enabled = false;
+            GetComponent<Collider>().enabled = false;
+            this.enabled = false;
+        }
     }
 
     private void FixedUpdate()
