@@ -27,13 +27,7 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetInteger("legs", 5);
             
         }
-
         Move();
-    }
-
-    private void FixedUpdate()
-    {
-        
     }
 
     private void Move()

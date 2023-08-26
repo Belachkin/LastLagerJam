@@ -16,21 +16,14 @@ public class PlayerAttack : MonoBehaviour
         {
 
             SetRandomHit();
-            Debug.Log("Hit");
+            
         }
-        
-
-        //if (Input.GetMouseButtonDown(1))
-        //{
-
-        //}
+               
     }
 
     private void SetRandomHit()
     {
-        
-        
-
+               
         StartCoroutine(Hit());
     }
 
@@ -41,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
         switch (Random.Range(0, 3))
         {
             case 0:
-                Debug.Log(0);
+                
                 _animator.SetInteger("arms", 15);
 
                 yield return new WaitForSeconds(0.5f);
@@ -49,7 +42,7 @@ public class PlayerAttack : MonoBehaviour
                 _animator.SetInteger("arms", 13);
                 break;
             case 1:
-                Debug.Log(1);
+                
                 _animator.SetInteger("arms", 14);
 
                 yield return new WaitForSeconds(0.5f);
@@ -57,7 +50,7 @@ public class PlayerAttack : MonoBehaviour
                 _animator.SetInteger("arms", 13);
                 break;
             case 2:
-                Debug.Log(2);
+                
 
                 _animator.SetInteger("arms", 15);
 
