@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Enemy : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class Enemy : MonoBehaviour
     public Animator _animator;
     [SerializeField] private float _speed;
 
-    public GameObject _player;
+    [HideInInspector]
+    public PlayerMovement _player;
     public float _distanceToPlayerWithoutRage;
     public float _distanceToPlayerToAttack;
 
@@ -29,6 +31,8 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        _player = FindFirstObjectByType<PlayerMovement>();
+
         _enemySM = new StateMachine();
 
         _idleEnemyState = new IdleEnemyState(this, _enemySM);
