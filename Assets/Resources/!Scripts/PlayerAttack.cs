@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private Animator _animator;
+    [SerializeField] private Animator _animator;
+
     private void Start()
     {
-        _animator = GetComponent<Animator>();
+        _animator.SetInteger("arms", 13);
     }
-    // Update is called once per frame
+
+    
+
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
