@@ -29,9 +29,12 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetInteger("legs", 5);
             
         }
-
-        Move();
         
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
     }
 
     private void Move()
@@ -39,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         
         Vector3 direction = new Vector3(horizontal , 0, vertical).normalized;
         
-        _rb.velocity = direction * _speed * Time.deltaTime;
+        _rb.velocity = direction * _speed * Time.fixedDeltaTime + new Vector3(0, _rb.velocity.y, 0);
         
         if(direction != Vector3.zero) 
         { 
