@@ -49,6 +49,7 @@ public class Enemy : MonoBehaviour
     {
         _enemySM.CurrentState.LogicUpdate();
 
+#if UNITY_EDITOR
         if(Input.GetKeyDown(KeyCode.V)) 
         {
             _animator.enabled = false;
@@ -57,10 +58,19 @@ public class Enemy : MonoBehaviour
             this.enabled = false;
         }
     }
+#endif
 
     private void FixedUpdate()
     {
         _enemySM.CurrentState.PhysicsUpdate();
+    }
+
+    public void Die()
+    {
+        _animator.enabled = false;
+        GetComponent<Collider>().enabled = false;
+        _navMeshAgent.enabled = false;
+        this.enabled = false;
     }
 
 }
