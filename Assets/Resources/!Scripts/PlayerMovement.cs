@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _horizontalSpeed;
     [SerializeField] private float _verticalSpeed;
-    [SerializeField] private Rigidbody _rigidbody;
+    //[SerializeField] private Rigidbody _rigidbody;
 
     [SerializeField] private Animator _animator;
 
@@ -25,13 +25,26 @@ public class PlayerMovement : MonoBehaviour
         {
             _animator.SetInteger("legs", 5);
         }
+
+        Move();
     }
 
     private void FixedUpdate()
     {
-        _rigidbody.velocity = new Vector3(horizontal * _horizontalSpeed, _rigidbody.velocity.y, vertical * _horizontalSpeed);
         
     }
 
-    
+    private void Move()
+    {
+        Vector3 directionHorizontal = new Vector3(horizontal, 0, 0);
+        Vector3 directionVertical = new Vector3(0, 0, vertical);
+
+        float magintudeHorizontal = Mathf.Clamp01(directionHorizontal.magnitude) * _horizontalSpeed;
+        float magintudeVertical = Mathf.Clamp01(directionVertical.magnitude) * _verticalSpeed;
+
+        directionHorizontal.Normalize();
+        directionVertical.Normalize();
+
+        transform.Translate(new Vector3(directionHorizontal.x * magintudeHorizontal * Time.deltaTime, 0, directionVertical.z * magintudeVertical * Time.deltaTime));
+    }
 }
