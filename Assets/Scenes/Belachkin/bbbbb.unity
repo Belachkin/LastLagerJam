@@ -282,7 +282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572907763}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0000000045921573, y: 0.9844127, z: -0.17587395, w: 0.000000025703514}
+  m_LocalRotation: {x: -6.9519723e-10, y: 0.9844127, z: -0.17587392, w: -0.0000000038912}
   m_LocalPosition: {x: -11.769, y: 3.34, z: 5.4799995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -761,7 +761,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0000000045921573, y: 0.9844127, z: -0.17587395, w: 0.000000025703514}
+  m_LocalRotation: {x: -6.9519723e-10, y: 0.9844127, z: -0.17587392, w: -0.0000000038912}
   m_LocalPosition: {x: -11.769, y: 3.34, z: 5.4799995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -951,6 +951,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1800607434}
   - component: {fileID: 1800607435}
+  - component: {fileID: 1800607436}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -992,6 +993,33 @@ MonoBehaviour:
   _rotationSpeed: 10
   _player: {fileID: 5612308839398306620}
   _animator: {fileID: 5612308839398306625}
+--- !u!54 &1800607436
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800607433}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &2043391764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,13 +1699,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8212234678297747229, guid: 8b48d4953a3d28f43bbf022ffde75501, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5612308839398306624}
-    - targetCorrespondingSourceObject: {fileID: 8212234678297747229, guid: 8b48d4953a3d28f43bbf022ffde75501, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5612308839398306623}
-    - targetCorrespondingSourceObject: {fileID: 8212234678297747229, guid: 8b48d4953a3d28f43bbf022ffde75501, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5612308839398306626}
     - targetCorrespondingSourceObject: {fileID: 8212234678297747229, guid: 8b48d4953a3d28f43bbf022ffde75501, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5612308839398306627}
@@ -1715,55 +1737,11 @@ CapsuleCollider:
   m_Height: 1.96
   m_Direction: 1
   m_Center: {x: 0, y: 0.91, z: 0}
---- !u!54 &5612308839398306624
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5612308839398306621}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!95 &5612308839398306625 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7766375571599221565, guid: 8b48d4953a3d28f43bbf022ffde75501, type: 3}
   m_PrefabInstance: {fileID: 5612308839398306619}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5612308839398306626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5612308839398306621}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe206ca0dd3e77a4c809954b368d6220, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _horizontalSpeed: 5
-  _verticalSpeed: 2.5
-  _rotationSpeed: 10
-  _player: {fileID: 0}
-  _animator: {fileID: 5612308839398306625}
 --- !u!114 &5612308839398306627
 MonoBehaviour:
   m_ObjectHideFlags: 0

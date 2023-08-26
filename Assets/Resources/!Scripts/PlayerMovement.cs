@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private Animator _animator;
 
-    [SerializeField] private Rigidbody _rb;
+    
 
     private float horizontal;
     private float vertical;
@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         directionVertical.Normalize();
 
         transform.Translate(new Vector3(directionHorizontal.x * magintudeHorizontal * Time.deltaTime, 0, directionVertical.z * magintudeVertical * Time.deltaTime));
+
 
 
         float angle = Vector3.SignedAngle(Vector3.left, (directionHorizontal + directionVertical).normalized, Vector3.up);
