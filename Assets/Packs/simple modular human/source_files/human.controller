@@ -1009,8 +1009,8 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0.25000003
   m_TransitionOffset: 0
-  m_ExitTime: 0
-  m_HasExitTime: 0
+  m_ExitTime: 0.25
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -1904,7 +1904,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25000003
+  m_TransitionDuration: 0.47548485
   m_TransitionOffset: 0
   m_ExitTime: 0
   m_HasExitTime: 0
@@ -2029,7 +2029,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.24999994
+  m_TransitionDuration: 0.47142196
   m_TransitionOffset: 0
   m_ExitTime: 0
   m_HasExitTime: 0
@@ -3711,7 +3711,7 @@ AnimatorState:
 --- !u!1102 &1102837422177634988
 AnimatorState:
   serializedVersion: 6
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

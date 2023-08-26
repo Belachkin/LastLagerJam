@@ -14,16 +14,18 @@ public class PlayerMovement : MonoBehaviour
     private float vertical;
     private void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal") * -1;
+        vertical = Input.GetAxisRaw("Vertical") * -1;
 
         if(horizontal != 0 || vertical != 0)
         {
             _animator.SetInteger("legs", 1);
+            //_animator.SetInteger("arms", 13);
         }
         else
         {
             _animator.SetInteger("legs", 5);
+            
         }
 
         Move();
