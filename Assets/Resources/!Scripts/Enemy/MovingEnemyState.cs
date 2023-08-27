@@ -20,7 +20,7 @@ public class MovingEnemyState : State
         base.LogicUpdate();
 
         float distanceToPlayer = (_enemy.transform.position - _enemy._player.transform.position).magnitude;
-        Debug.Log("faf");
+        //Debug.Log("faf");
 
         _enemy._navMeshAgent.destination = _enemy._player.transform.position;
 

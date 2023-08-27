@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEditor.Searcher;
 using UnityEngine;
 
-public class FightEnemyState : State
+public class FightEnemyState : State 
 {
     private float _timer = 0f;
     private int _attackIndex = 0;
-
+    
+    public Transform AttackPoint;
+    public float AttackRange = 0.5f;
+    public LayerMask PlayerLayer;
+    public float Damage;
+    
     public FightEnemyState(Enemy enemy, StateMachine stateMachine) : base(enemy, stateMachine)
     {
     }
@@ -34,6 +39,9 @@ public class FightEnemyState : State
         if (_timer > _enemy._attackTimer)
         {
             _enemy._animator.SetInteger("arms", _enemy._attackArms[_attackIndex++ % _enemy._attackArms.Length]);
+
+            Attack();
+
             _timer = 0f;
         }
 
@@ -48,5 +56,21 @@ public class FightEnemyState : State
     public override void Exit()
     {
 
+    }
+
+    public void Attack()
+    {
+        Collider[] hitPlayer = Physics.OverlapSphere(AttackPoint.position, AttackRange, PlayerLayer);
+
+        foreach (Collider player in hitPlayer)
+        {
+            Debug.Log("Enemy take dmg:" + Damage);
+
+            if (hitPlayer != null)
+            {
+                player.gameObject.GetComponent<PlayerAttack>().TakeDamage(Damage);
+                
+            }
+        }
     }
 }
