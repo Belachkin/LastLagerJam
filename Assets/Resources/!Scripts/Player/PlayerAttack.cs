@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    
 
+    [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private Animator _animator;
 
     [SerializeField] private GameObject[] _weapons;
@@ -66,6 +66,11 @@ public class PlayerAttack : MonoBehaviour
 
         Collider[] hitEnemies = Physics.OverlapSphere(_attackPoint.position, _attackRange, _enemyLayers);
 
+        if(hitEnemies.Length <= 0)
+        {
+            AudioManager.instance.Play("airHit1");
+        }
+
         foreach (Collider enemy in hitEnemies)
         {
             Debug.Log(Damage);
@@ -75,7 +80,10 @@ public class PlayerAttack : MonoBehaviour
                 enemy.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
               
                 Instantiate(_hitParticle, _attackPoint);
+
+                AudioManager.instance.Play("hit2");
             }
+            
         }
 
         if (UseCount > 0)
@@ -136,7 +144,24 @@ public class PlayerAttack : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("���� �����!");
+        _isAttacking = true;
+        _playerMovement.IsDie = true;
+
+        AudioManager.instance.Play("playerDie");
+
+        Vector3 currentAngle = transform.eulerAngles;
+
+        currentAngle = new Vector3(currentAngle.x, currentAngle.z, Mathf.LerpAngle(currentAngle.z, -90, 10f));
+
+        transform.eulerAngles = currentAngle;
+
+        transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+
+        _animator.SetInteger("arms", 6);
+
+
+
+        Debug.Log("Вмер");
     }
 
     public void Knockback()

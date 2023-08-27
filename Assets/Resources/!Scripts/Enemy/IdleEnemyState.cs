@@ -15,14 +15,14 @@ public class IdleEnemyState : State
             _enemy._prop.SetActive(true);
         _enemy._animator.SetInteger("legs", _enemy._idleLegs);
         _enemy._animator.SetInteger("arms", _enemy._idleArms);
-        Debug.Log("Gtybc");
+        //Debug.Log("Gtybc");
     }
 
     public override void LogicUpdate()
     {
         float distanceToPlayer = (_enemy.transform.position - _enemy._player.transform.position).magnitude;
 
-        Debug.Log("fgghs");
+        //Debug.Log("fgghs");
 
         if (distanceToPlayer < _enemy._distanceToPlayerWithoutRage)
             _stateMachine.ChangeState(_enemy._movingEnemyState);

@@ -15,26 +15,37 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontal;
     private float vertical;
+
+    public bool IsDie = false;
+
     private void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal") * -1;
-        vertical = Input.GetAxisRaw("Vertical") * -1;
+        if (!IsDie)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal") * -1;
+            vertical = Input.GetAxisRaw("Vertical") * -1;
 
-        if(horizontal != 0 || vertical != 0)
-        {
-            _animator.SetInteger("legs", 1);
-        }
-        else
-        {
-            _animator.SetInteger("legs", 5);
+            if(horizontal != 0 || vertical != 0)
+            {
+                _animator.SetInteger("legs", 1);
+            }
+            else
+            {
+                _animator.SetInteger("legs", 5);
             
+            }
         }
+
         
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (!IsDie)
+        {
+            Move();
+        }
+        
     }
 
     private void Move()

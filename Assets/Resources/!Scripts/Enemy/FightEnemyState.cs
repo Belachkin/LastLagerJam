@@ -70,7 +70,7 @@ public class FightEnemyState : State
             {
                 player.gameObject.GetComponent<PlayerAttack>().TakeDamage(Damage);
                 _enemy.InstantParticle();
-                
+                AudioManager.instance.Play("hit1");
             }
         }
     }

@@ -108,6 +108,12 @@ public class Enemy : MonoBehaviour
         _navMeshAgent.enabled = false;
         this.enabled = false;
 
+        if(Random.Range(0, 3) == 0)
+        {
+            AudioManager.instance.Play("dieCigan");
+        }
+
+
         foreach(Rigidbody rig in _rigs)
         {
             rig.isKinematic = false;
