@@ -69,6 +69,7 @@ public class FightEnemyState : State
             if (hitPlayer != null)
             {
                 player.gameObject.GetComponent<PlayerAttack>().TakeDamage(Damage);
+                _enemy.InstantParticle();
                 
             }
         }

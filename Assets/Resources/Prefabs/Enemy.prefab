@@ -4456,6 +4456,7 @@ GameObject:
   - component: {fileID: 1152964466201497362}
   - component: {fileID: 5609766982837283118}
   - component: {fileID: 775878352133532434}
+  - component: {fileID: 8969900171833063488}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -4554,6 +4555,10 @@ MonoBehaviour:
   _playerLayer:
     serializedVersion: 2
     m_Bits: 128
+  _hitParticle: {fileID: 2504214343621411456, guid: 2ad76ecd02b98cd44be624fd3308e61a, type: 3}
+  _rigidbody: {fileID: 8969900171833063488}
+  _knockbackPower: 500
+  _resetDelay: 0.2
 --- !u!114 &775878352133532434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4568,6 +4573,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 30
   Value: 100
+--- !u!54 &8969900171833063488
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5756767534962837133}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &5781377586921316943
 GameObject:
   m_ObjectHideFlags: 0

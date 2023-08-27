@@ -109,14 +109,22 @@ public class Enemy : MonoBehaviour
 
     public void Knockback()
     {
-        _rigidbody.AddForce(Vector3.left * _knockbackPower, ForceMode.Impulse );
-        //StartCoroutine(Reset());
+        _rigidbody.isKinematic = false;
+        _rigidbody.AddForce((transform.position - _player.transform.position).normalized * _knockbackPower, ForceMode.Impulse );
+        StartCoroutine(Reset());
     }
 
-    //private IEnumerator Reset()
-    //{
-    //    yield return new WaitForSeconds( _resetDelay );
-    //    _rigidbody.velocity = Vector3.zero;
-    //}
+    private IEnumerator Reset()
+    {
+        yield return new WaitForSeconds(_resetDelay);
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.isKinematic = true;
+
+    }
+
+    public void InstantParticle()
+    {
+        Instantiate(_hitParticle, _attackPoint);
+    }
 
 }
