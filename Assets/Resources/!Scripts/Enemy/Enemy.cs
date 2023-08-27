@@ -78,8 +78,8 @@ public class Enemy : MonoBehaviour
             _navMeshAgent.enabled = false;
             this.enabled = false;
         }
-    }
 #endif
+    }
 
     private void FixedUpdate()
     {

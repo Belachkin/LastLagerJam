@@ -4542,7 +4542,7 @@ MonoBehaviour:
   _speed: 5
   _player: {fileID: 0}
   _distanceToPlayerWithoutRage: 15
-  _distanceToPlayerToAttack: 1
+  _distanceToPlayerToAttack: 2.3
   _idleArms: 5
   _idleLegs: 5
   _attackArms: 0e0000000f000000
@@ -4581,7 +4581,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5756767534962837133}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 10000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

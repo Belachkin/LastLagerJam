@@ -15,11 +15,11 @@ public class IdleEnemyState : State
             _enemy._prop.SetActive(true);
         _enemy._animator.SetInteger("legs", _enemy._idleLegs);
         _enemy._animator.SetInteger("arms", _enemy._idleArms);
+        Debug.Log("Gtybc");
     }
 
     public override void LogicUpdate()
     {
-        base.LogicUpdate();
         float distanceToPlayer = (_enemy.transform.position - _enemy._player.transform.position).magnitude;
 
         Debug.Log("fgghs");
