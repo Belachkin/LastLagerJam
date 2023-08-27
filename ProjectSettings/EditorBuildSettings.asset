@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 30c064897677ed440ae4c8d1b01d3c34
+  - enabled: 1
+    path: Assets/Scenes/Pozziliv/LVLPozziliva.unity
+    guid: 2358b1d98cb5bc845b37c4bb66912706
   m_configObjects: {}

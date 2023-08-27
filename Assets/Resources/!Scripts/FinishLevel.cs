@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishLevel : MonoBehaviour
 {
@@ -18,5 +19,11 @@ public class FinishLevel : MonoBehaviour
 
             _camera.SetActive(true);
         }
+    }
+
+    private IEnumerator TheEnd()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("Menu");
     }
 }
