@@ -8,6 +8,8 @@ TagManager:
   - sittingpoint
   - pickuppoint
   - waypoint
+  - FxTemporaire
+  - End
   layers:
   - Default
   - TransparentFX
