@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 7106144943962624311}
   - component: {fileID: 6661707387510086598}
   - component: {fileID: 1826932849069208141}
+  - component: {fileID: 8798924472725587874}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -211,6 +212,27 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.91, z: 0}
+--- !u!65 &8798924472725587874
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4386865504740625436}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!1 &7812033708631355748
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +293,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 883217121939174034, guid: 8b48d4953a3d28f43bbf022ffde75501, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000317932789507367, guid: 8b48d4953a3d28f43bbf022ffde75501, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -364,7 +390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3906945552880457142, guid: 8b48d4953a3d28f43bbf022ffde75501, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3971000207634832749, guid: 8b48d4953a3d28f43bbf022ffde75501, type: 3}
       propertyPath: m_IsActive

@@ -4474,7 +4474,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 11.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4467443522026873086}
@@ -4553,8 +4553,8 @@ MonoBehaviour:
   _animator: {fileID: 6965380590493524677}
   _speed: 5
   _player: {fileID: 0}
-  _distanceToPlayerWithoutRage: 15
-  _distanceToPlayerToAttack: 2.6
+  _distanceToPlayerWithoutRage: 20
+  _distanceToPlayerToAttack: 3
   _idleArms: 5
   _idleLegs: 5
   _attackArms: 0e0000000f000000
