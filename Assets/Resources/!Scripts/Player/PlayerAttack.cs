@@ -34,6 +34,10 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private ParticleSystem _hitParticle;
     //[SerializeField] private ParticleSystem _takeDamageParticle;
 
+    [Header("Отталкивание")]
+    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private float _knockbackPower = 16f;
+
     private bool _isAttacking = false;
 
     void Update()
@@ -67,7 +71,7 @@ public class PlayerAttack : MonoBehaviour
             if (hitEnemies != null)
             {
                 enemy.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
-
+              
                 Instantiate(_hitParticle, _attackPoint);
             }
         }
@@ -119,6 +123,8 @@ public class PlayerAttack : MonoBehaviour
 
         //Instantiate(_takeDamageParticle, _attackPoint);
 
+        //Knockback();
+
         Debug.Log(_health.Value);
         if (_health.Value <= 0)
         {
@@ -129,6 +135,12 @@ public class PlayerAttack : MonoBehaviour
     public void Die()
     {
         Debug.Log("УМЕР НАХУЙ!");
+    }
+
+    public void Knockback()
+    {
+        _rigidbody.AddForce(Vector3.left * _knockbackPower, ForceMode.Impulse);
+        //StartCoroutine(Reset());
     }
 }
 

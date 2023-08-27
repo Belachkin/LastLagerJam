@@ -40,6 +40,11 @@ public class Enemy : MonoBehaviour
     [Header("Черкаши т.е частицы говна")]
     [SerializeField] private ParticleSystem _hitParticle;
 
+    [Header("Отталкивание")]
+    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private float _knockbackPower = 16f;
+    [SerializeField] private float _resetDelay = 0.15f;
+
     private void Start()
     {
         _player = FindFirstObjectByType<PlayerMovement>();
@@ -85,6 +90,9 @@ public class Enemy : MonoBehaviour
     {
         _health.Value -= damage;
         Debug.Log(_health.Value);
+
+        Knockback();
+
         if( _health.Value <= 0 )
         {
             Die();
@@ -98,5 +106,17 @@ public class Enemy : MonoBehaviour
         _navMeshAgent.enabled = false;
         this.enabled = false;
     }
+
+    public void Knockback()
+    {
+        _rigidbody.AddForce(Vector3.left * _knockbackPower, ForceMode.Impulse );
+        //StartCoroutine(Reset());
+    }
+
+    //private IEnumerator Reset()
+    //{
+    //    yield return new WaitForSeconds( _resetDelay );
+    //    _rigidbody.velocity = Vector3.zero;
+    //}
 
 }

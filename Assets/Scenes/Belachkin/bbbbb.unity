@@ -491,6 +491,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5609766982837283118, guid: 8ad805d7504a4cf4f8e4e31f7e91e9d6, type: 3}
+      propertyPath: _rigidbody
+      value: 
+      objectReference: {fileID: 852368569}
+    - target: {fileID: 5609766982837283118, guid: 8ad805d7504a4cf4f8e4e31f7e91e9d6, type: 3}
+      propertyPath: _knockbackPower
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5756767534962837133, guid: 8ad805d7504a4cf4f8e4e31f7e91e9d6, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -912,6 +920,11 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!54 &1436494765 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3324102982304603554, guid: 1dd2df3fa961cf44a8e71f49e305fe83, type: 3}
+  m_PrefabInstance: {fileID: 4745979660114738704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1609293140
 GameObject:
   m_ObjectHideFlags: 3
@@ -1512,11 +1525,72 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7138949220356440006, guid: 1dd2df3fa961cf44a8e71f49e305fe83, type: 3}
+      propertyPath: _rigidbody
+      value: 
+      objectReference: {fileID: 1436494765}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dd2df3fa961cf44a8e71f49e305fe83, type: 3}
+--- !u!1001 &5003657747968903183
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1579344403947468810, guid: 9ffd4bfe21615e24e82829a3b6ddc6d9, type: 3}
+      propertyPath: m_Name
+      value: CrowBar_ItemTaker
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844040924976431125, guid: 9ffd4bfe21615e24e82829a3b6ddc6d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844040924976431125, guid: 9ffd4bfe21615e24e82829a3b6ddc6d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844040924976431125, guid: 9ffd4bfe21615e24e82829a3b6ddc6d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844040924976431125, guid: 9ffd4bfe21615e24e82829a3b6ddc6d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844040924976431125, guid: 9ffd4bfe21615e24e82829a3b6ddc6d9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844040924976431125, guid: 9ffd4bfe21615e24e82829a3b6ddc6d9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844040924976431125, guid: 9ffd4bfe21615e24e82829a3b6ddc6d9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844040924976431125, guid: 9ffd4bfe21615e24e82829a3b6ddc6d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844040924976431125, guid: 9ffd4bfe21615e24e82829a3b6ddc6d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844040924976431125, guid: 9ffd4bfe21615e24e82829a3b6ddc6d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ffd4bfe21615e24e82829a3b6ddc6d9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1529,3 +1603,4 @@ SceneRoots:
   - {fileID: 2094504717}
   - {fileID: 4745979660114738704}
   - {fileID: 852368567}
+  - {fileID: 5003657747968903183}
