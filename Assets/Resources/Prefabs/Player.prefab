@@ -87,6 +87,7 @@ MonoBehaviour:
   _player: {fileID: 1371827095408656589}
   _animator: {fileID: 6776684317803578709}
   _rb: {fileID: 3324102982304603554}
+  IsDie: 0
 --- !u!54 &3324102982304603554
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -126,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d0eb1c7feeb3f46bd1bd9a8fc63e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerMovement: {fileID: 8170635002488870178}
   _animator: {fileID: 6776684317803578709}
   _weapons:
   - {fileID: 4416438900489180406}
@@ -186,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702cc49f36fdc9747b764dfb6d570734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 10
   Value: 100
 --- !u!136 &1826932849069208141
 CapsuleCollider:
