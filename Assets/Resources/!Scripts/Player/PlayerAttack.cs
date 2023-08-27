@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -138,11 +139,11 @@ public class PlayerAttack : MonoBehaviour
         Debug.Log(_health.Value);
         if (_health.Value <= 0)
         {
-            Die();
+            StartCoroutine( Die() );
         }
     }
 
-    public void Die()
+    public IEnumerator Die()
     {
         _isAttacking = true;
         _playerMovement.IsDie = true;
@@ -159,7 +160,9 @@ public class PlayerAttack : MonoBehaviour
 
         _animator.SetInteger("arms", 6);
 
+        yield return new WaitForSeconds(2);
 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         Debug.Log("Вмер");
     }
