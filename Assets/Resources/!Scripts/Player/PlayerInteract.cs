@@ -12,6 +12,9 @@ public class PlayerInteract : MonoBehaviour
         if(other.gameObject.TryGetComponent(out IInteractable interactable))
         {
             Interact(interactable);
+
+            AudioManager.instance.Play("takeItem");
+
             Destroy(other.gameObject);
         }
     }
