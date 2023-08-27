@@ -76,6 +76,16 @@ MonoBehaviour:
     volume: 1
     pitch: 0.7
     source: {fileID: 0}
+  - name: smoke
+    clip: {fileID: 8300000, guid: 44bb4c84f222c7c469b7c9aee9887c2c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: buyHueta
+    clip: {fileID: 8300000, guid: b346e7548902cf345b4ff9c50e86ae9a, type: 3}
+    volume: 1
+    pitch: 0.9
+    source: {fileID: 0}
 --- !u!82 &3609834133949504719
 AudioSource:
   m_ObjectHideFlags: 0
