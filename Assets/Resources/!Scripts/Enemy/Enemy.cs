@@ -37,6 +37,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _attackRange = 0.5f;
     [SerializeField] private LayerMask _playerLayer;
 
+    [Header("Черкаши т.е частицы говна")]
+    [SerializeField] private ParticleSystem _hitParticle;
+
     private void Start()
     {
         _player = FindFirstObjectByType<PlayerMovement>();
@@ -51,6 +54,7 @@ public class Enemy : MonoBehaviour
         _fightEnemyState.AttackRange = _attackRange;
         _fightEnemyState.PlayerLayer = _playerLayer;
         _fightEnemyState.Damage = _baseDamage;
+        
 
         _enemySM.Initialize(_idleEnemyState);
 

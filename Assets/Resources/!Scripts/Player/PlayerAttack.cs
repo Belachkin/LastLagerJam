@@ -30,6 +30,10 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float _attackRange = 0.5f;
     [SerializeField] private LayerMask _enemyLayers;
 
+    [Header("Черкаши т.е частицы говна")]
+    [SerializeField] private ParticleSystem _hitParticle;
+    //[SerializeField] private ParticleSystem _takeDamageParticle;
+
     private bool _isAttacking = false;
 
     void Update()
@@ -63,6 +67,8 @@ public class PlayerAttack : MonoBehaviour
             if (hitEnemies != null)
             {
                 enemy.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
+
+                Instantiate(_hitParticle, _attackPoint);
             }
         }
 
@@ -110,6 +116,9 @@ public class PlayerAttack : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _health.Value -= damage;
+
+        //Instantiate(_takeDamageParticle, _attackPoint);
+
         Debug.Log(_health.Value);
         if (_health.Value <= 0)
         {

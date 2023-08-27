@@ -142,6 +142,7 @@ MonoBehaviour:
   _enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  _hitParticle: {fileID: 2504214343621411456, guid: 2ad76ecd02b98cd44be624fd3308e61a, type: 3}
 --- !u!114 &4693406239111607943
 MonoBehaviour:
   m_ObjectHideFlags: 0

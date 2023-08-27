@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Searcher;
 using UnityEngine;
 
-public class FightEnemyState : State
+public class FightEnemyState : State 
 {
     private float _timer = 0f;
     private int _attackIndex = 0;
@@ -12,6 +12,7 @@ public class FightEnemyState : State
     public float AttackRange = 0.5f;
     public LayerMask PlayerLayer;
     public float Damage;
+    
     public FightEnemyState(Enemy enemy, StateMachine stateMachine) : base(enemy, stateMachine)
     {
     }
@@ -68,6 +69,7 @@ public class FightEnemyState : State
             if (hitPlayer != null)
             {
                 player.gameObject.GetComponent<PlayerAttack>().TakeDamage(Damage);
+                
             }
         }
     }
