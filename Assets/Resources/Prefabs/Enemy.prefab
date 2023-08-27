@@ -1855,7 +1855,7 @@ Transform:
   m_GameObject: {fileID: 2858983413781988972}
   serializedVersion: 2
   m_LocalRotation: {x: 3.554449e-15, y: -1, z: 0.00017437339, w: 0}
-  m_LocalPosition: {x: -0.0032, y: -0, z: 0}
+  m_LocalPosition: {x: -0.00535, y: 0, z: -0}
   m_LocalScale: {x: 0.01, y: 0.010000003, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4554,7 +4554,7 @@ MonoBehaviour:
   _speed: 5
   _player: {fileID: 0}
   _distanceToPlayerWithoutRage: 20
-  _distanceToPlayerToAttack: 3
+  _distanceToPlayerToAttack: 3.25
   _idleArms: 5
   _idleLegs: 5
   _attackArms: 0e0000000f000000
@@ -4563,7 +4563,7 @@ MonoBehaviour:
   _baseDamage: 5
   _health: {fileID: 775878352133532434}
   _attackPoint: {fileID: 4941289863777178184}
-  _attackRange: 0.5
+  _attackRange: 1.5
   _playerLayer:
     serializedVersion: 2
     m_Bits: 128
