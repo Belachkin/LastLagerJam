@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class FinishLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Transform _endPos;
+    [SerializeField] GameObject _camera;
+    private Animator _animation;
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerAttack>()._isAttacking = true;
+            other.gameObject.GetComponent<PlayerMovement>().IsDie = true;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            other.gameObject.GetComponent<PlayerMovement>().FinishLevel(_endPos);
+
+            _camera.SetActive(true);
+        }
     }
 }

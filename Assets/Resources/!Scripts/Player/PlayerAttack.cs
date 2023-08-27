@@ -38,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _knockbackPower = 16f;
 
-    private bool _isAttacking = false;
+    public bool _isAttacking = false;
 
     void Update()
     {
