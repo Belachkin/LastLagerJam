@@ -24,17 +24,17 @@ public class PlayerAttack : MonoBehaviour
     private GameObject _weapon;
     
 
-    [Header("Хп ебучее и остальная хуйня")]
+    [Header("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField] private Health _health;
     [SerializeField] private Transform _attackPoint;
     [SerializeField] private float _attackRange = 0.5f;
     [SerializeField] private LayerMask _enemyLayers;
 
-    [Header("Черкаши т.е частицы говна")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ.пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField] private ParticleSystem _hitParticle;
     //[SerializeField] private ParticleSystem _takeDamageParticle;
 
-    [Header("Отталкивание")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _knockbackPower = 16f;
 
@@ -52,7 +52,9 @@ public class PlayerAttack : MonoBehaviour
     private void SetRandomHit()
     {
                
+
         StartCoroutine(Hit());
+
     }
 
     private IEnumerator Hit()
@@ -134,7 +136,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("УМЕР НАХУЙ!");
+        Debug.Log("пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ!");
     }
 
     public void Knockback()
