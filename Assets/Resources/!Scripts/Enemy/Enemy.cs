@@ -8,6 +8,8 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class Enemy : MonoBehaviour
 {
     // Ну тут типа враг нас пиздит
+
+    [SerializeField] private Rigidbody[] _rigs;
     
     private StateMachine _enemySM;
     public IdleEnemyState _idleEnemyState;
@@ -105,6 +107,11 @@ public class Enemy : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         _navMeshAgent.enabled = false;
         this.enabled = false;
+
+        foreach(Rigidbody rig in _rigs)
+        {
+            rig.isKinematic = false;
+        }
     }
 
     public void Knockback()
